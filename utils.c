@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:16:41 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/12 12:35:58 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/12 17:34:09 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,28 @@ void	print_stack(int *stack)
 	while (stack[i])
 	{
 		ft_putnbr_fd(stack[i++], 1);
+		ft_putchar_fd('\n', 1);
+	}
+}
+
+void	print_stacks(t_ps *ps)
+{
+	int	a;
+	int	b;
+
+	a = 0;
+	b = 0;
+	while (a < ps->size_a || b < ps->size_b)
+	{
+		if (a < ps->size_a)
+			ft_putnbr_fd(ps->a[a++], 1);
+		else
+			ft_putchar_fd(' ', 1);
+		ft_putstr_fd("\t", 1);
+		if (b < ps->size_b)
+			ft_putnbr_fd(ps->b[b++], 1);
+		else
+			ft_putchar_fd(' ', 1);
 		ft_putchar_fd('\n', 1);
 	}
 }

@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 09:53:10 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/12 12:38:20 by fsandel          ###   ########.fr        #
+#    Updated: 2022/12/12 17:08:04 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,9 @@ LIBFT_LIB		= libft.a
 LIBFT			= $(LIBFT_DIR)/$(LIBFT_LIB)
 LIBFT_GIT		= https://github.com/fsandel/libft
 
-SRC				= main.c error.c stacks.c utils.c check_element.c
+SRC				= main.c error.c stacks.c utils.c check_element.c \
+					swap.c push.c rotate.c reverse_rotate.c \
+					sort_utils.c sorting.c
 
 HDR				= push_swap.h
 

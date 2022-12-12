@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:20:48 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/12 12:19:58 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/12 17:47:33 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ int	main(int argc, char *argv[])
 	input_check(argc, argv);
 	ps = init_stacks(argc, argv);
 	create_stack(argc, argv, ps);
-	print_stack(ps->a);
-	print_stack(ps->b);
 	check_duplicate(ps);
+	sort(ps);
+	if (is_finished(ps))
+		ft_printf("sorted\n");
+	ft_printf("Needed %d operations\n", ps->operations);
+	free_struct(ps);
+	//system("leaks push_swap");
 	return (0);
 }

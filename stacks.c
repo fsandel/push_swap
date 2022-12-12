@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:48:38 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/12 12:38:47 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/12 17:33:22 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,17 @@ t_ps	*init_stacks(int argc, char *argv[])
 
 	ps = (t_ps *)malloc(sizeof(t_ps) * 1);
 	if (argc == 2)
-		ps->size = count_char(argv[1], ' ') + 1;
+		ps->size_a = count_char(argv[1], ' ') + 1;
 	else
-		ps->size = argc - 1;
-	ps->a = (int *)ft_calloc(ps->size + 1, sizeof(int));
-	ps->b = (int *)ft_calloc(ps->size + 1, sizeof(int));
+		ps->size_a = argc - 1;
+	ps->size_b = 0;
+	ps->a = (int *)ft_calloc(ps->size_a, sizeof(int));
+	ps->b = (int *)ft_calloc(ps->size_a, sizeof(int));
+	ps->operations = 0;
+	ps->max_a = get_maximum(ps->a, ps->size_a);
+	ps->min_a = get_minimum(ps->a, ps->size_a);
+	ps->max_b = INT_MIN;
+	ps->min_b = INT_MAX;
 	return (ps);
 }
 
@@ -55,7 +61,7 @@ void	from_numbers(int argc, char *argv[], t_ps *ps)
 	long	temp;
 
 	i = 0;
-	while (i < ps->size && argv[i + 1])
+	while (i < ps->size_a && argv[i + 1])
 	{
 		ps->a[i] = check_element(argv[i + 1], ps);
 		i++;
