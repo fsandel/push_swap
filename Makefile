@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 09:53:10 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/12 17:08:04 by fsandel          ###   ########.fr        #
+#    Updated: 2022/12/16 13:25:19 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,31 +15,35 @@ CC				= cc
 RM				= rm -f
 CFLAGS			= #-Wall -Wextra -Werror
 
-
-OBJ				= $(SRC:.c=.o)
-
 LIBFT_DIR		= libft
 LIBFT_LIB		= libft.a
 LIBFT			= $(LIBFT_DIR)/$(LIBFT_LIB)
 LIBFT_GIT		= https://github.com/fsandel/libft
 
-SRC				= main.c error.c stacks.c utils.c check_element.c \
-					swap.c push.c rotate.c reverse_rotate.c \
-					sort_utils.c sorting.c
+SRC				= $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+SRC_DIR			= src
+SRC_FILES		= main.c error.c stacks.c utils.c check_element.c \
+					sort_utils.c sorting.c \
+					push.c reverse_rotate.c rotate.c swap.c
+
+OBJ				= $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
+OBJ_DIR			= obj
+OBJ_FILES		= $(SRC_FILES:.c=.o)
 
 HDR				= push_swap.h
 
 
-all:			$(LIBFT) $(NAME)
+all:			obj_dir $(LIBFT) $(NAME)
+				
+$(NAME):		$(OBJ) | $(HDR)
+				$(CC) $^ $(LIBFT) -o $@ $(CFLAGS)
 
-$(NAME):$(OBJ)
-	$(CC) $(OBJ) $(LIBFT) -o $@ $(CFLAGS)
-
-$(OBJ):$(SRC) $(HDR)
-	$(CC) -c $(SRC) $(CFLAGS)
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
+				$(CC) -c $< $(CFLAGS) -o $@
 
 clean:
 				@$(RM) $(OBJ)
+				@$(RM) -r $(OBJ_DIR)
 				@make clean -C $(LIBFT_DIR)
 
 fclean:			
@@ -53,6 +57,8 @@ re:
 
 libft:			$(LIBFT)
 
+obj_dir:
+				mkdir -p $(OBJ_DIR)
 $(LIBFT):
 				make clone_libft
 				make -C $(LIBFT_DIR)
@@ -65,4 +71,4 @@ else
 				@git clone $(LIBFT_GIT) $(LIBFT_DIR)
 endif
 
-.PHONY:			all clean fclean re lib 
+.PHONY:			all clean fclean re libft clone_libft
