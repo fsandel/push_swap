@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:48:38 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 13:32:20 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 19:38:32 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_ps	*init_stacks(int argc, char *argv[])
 	ps->a = (int *)ft_calloc(ps->size_a, sizeof(int));
 	ps->b = (int *)ft_calloc(ps->size_a, sizeof(int));
 	ps->operations = 0;
-	ps->parts = 3;
+	ps->parts = 1;
 	
 	return (ps);
 }

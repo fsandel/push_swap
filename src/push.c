@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:40:22 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 13:32:03 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 19:25:34 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,9 @@ void	pa(t_ps *ps)
 			ps->max_a = ps->a[0];
 		if (ps->a[0] < ps->min_a)
 			ps->min_a = ps->a[0];
+	if (OUTPUT)
+		ft_putendl_fd("pa", 1);
 	}
-	ft_putendl_fd("pa", 1);
 	ps->operations++;
 }
 
@@ -59,15 +60,17 @@ void	pb(t_ps *ps)
 		push(ps->a, ps->size_a, ps->b, ps->size_b);
 		ps->size_a--;
 		ps->size_b++;
+		//update_extreme(ps);
 		if (ps->b[0] == ps->max_a)
 			ps->max_a = get_maximum(ps->a, ps->size_a);
 		if (ps->b[0] == ps->min_a)
 			ps->min_a = get_minimum(ps->a, ps->size_a);
 		if (ps->b[0] > ps->max_b)
 			ps->max_b = ps->b[0];
-		if (ps->a[0] < ps->min_a)
+		if (ps->b[0] < ps->min_b)
 			ps->min_b = ps->b[0];
+	if (OUTPUT)
+		ft_putendl_fd("pb", 1);
 	}
-	ft_putendl_fd("pb", 1);
 	ps->operations++;
 }

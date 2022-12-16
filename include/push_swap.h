@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:23:57 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 13:33:29 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 20:14:50 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
+
+# define OUTPUT	1
 
 typedef struct ps
 {
@@ -31,6 +33,8 @@ typedef struct ps
 	int		operations;
 	int		parts;
 }			t_ps;
+//radix.c
+void	radix(t_ps *ps);
 
 //error.c
 void	input_check(int argc, char *argv[]);
@@ -70,6 +74,7 @@ int		get_maximum(int *stack, int stack_size);
 int		get_minimum(int *stack, int stack_size);
 int		is_sorted(int *stack, int stack_size);
 int		is_finished(t_ps *ps);
+void	update_extreme(t_ps *ps);
 
 //swap.c
 void	sa(t_ps *ps);

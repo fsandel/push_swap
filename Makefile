@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 09:53:10 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/16 13:58:31 by fsandel          ###   ########.fr        #
+#    Updated: 2022/12/16 19:46:16 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC				= $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 SRC_DIR			= src
 SRC_FILES		= main.c error.c stacks.c utils.c check_element.c \
 					sort_utils.c sorting.c \
-					push.c reverse_rotate.c rotate.c swap.c
+					push.c reverse_rotate.c rotate.c swap.c radix.c
 
 OBJ				= $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 OBJ_DIR			= obj
@@ -74,7 +74,7 @@ $(LIBFT):
 				@make -C $(LIBFT_DIR)
 
 clone_libft:
-ifeq ($(shell (ls $(LIB_DIR)| grep libft)), libft)
+ifeq ($(shell (ls $(LIB_DIR) | grep libft)), libft)
 				@echo "libft found"
 else
 				@echo "no libft found, downloading now"
