@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 09:53:10 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/16 13:33:36 by fsandel          ###   ########.fr        #
+#    Updated: 2022/12/16 13:58:31 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ CC				= cc
 RM				= rm -f
 CFLAGS			= #-Wall -Wextra -Werror
 
-LIBFT_DIR		= lib/libft
+LIB_DIR			= lib
+LIBFT_DIR		= $(LIB_DIR)/libft
 LIBFT_LIB		= libft.a
 LIBFT			= $(LIBFT_DIR)/$(LIBFT_LIB)
 LIBFT_GIT		= https://github.com/fsandel/libft
@@ -38,35 +39,42 @@ HDR_FILES		= push_swap.h
 all:			obj_dir $(LIBFT) $(NAME)
 				
 $(NAME):		$(OBJ) | $(HDR)
-				$(CC) $^ $(LIBFT) -o $@ $(CFLAGS)
+				@$(CC) $^ $(LIBFT) -o $@ $(CFLAGS)
+				@echo "created $@"
 
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
-				$(CC) -c $< $(CFLAGS) -o $@
+				@$(CC) -c $< $(CFLAGS) -o $@
+				@echo "created $@"
 
 clean:
 				@$(RM) $(OBJ)
 				@$(RM) -r $(OBJ_DIR)
 				@make clean -C $(LIBFT_DIR)
+				@echo "cleaned $(NAME)"
 
 fclean:			
-				make clean
-				$(RM) $(NAME)
-				make fclean -C $(LIBFT_DIR)
+				@make clean
+				@$(RM) $(NAME)
+				@make fclean -C $(LIBFT_DIR)
+				@echo "fcleaned $(NAME)"
+
 
 re:
-				make fclean
-				make all
+				@make fclean
+				@make all
 
 libft:			$(LIBFT)
 
 obj_dir:
-				mkdir -p $(OBJ_DIR)
+				@mkdir -p $(OBJ_DIR)
+
+
 $(LIBFT):
-				make clone_libft
-				make -C $(LIBFT_DIR)
+				@make clone_libft
+				@make -C $(LIBFT_DIR)
 
 clone_libft:
-ifeq ($(shell (ls | grep libft)), libft)
+ifeq ($(shell (ls $(LIB_DIR)| grep libft)), libft)
 				@echo "libft found"
 else
 				@echo "no libft found, downloading now"
