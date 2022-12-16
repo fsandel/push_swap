@@ -6,11 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:22:34 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 11:25:08 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:32:10 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 static void	rotate(int *stack, int stack_size)
 {

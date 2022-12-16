@@ -6,11 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:40:22 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 11:25:00 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:32:03 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 static void	push(int *from, int size_from, int *to, int size_to)
 {

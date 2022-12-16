@@ -6,11 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:20:48 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 11:25:36 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:32:00 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 int	get_min_and_overwrite(t_ps *ps);
 void	change_to_index(t_ps *ps);

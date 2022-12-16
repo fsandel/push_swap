@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 09:53:10 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/16 13:25:19 by fsandel          ###   ########.fr        #
+#    Updated: 2022/12/16 13:33:36 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC				= cc
 RM				= rm -f
 CFLAGS			= #-Wall -Wextra -Werror
 
-LIBFT_DIR		= libft
+LIBFT_DIR		= lib/libft
 LIBFT_LIB		= libft.a
 LIBFT			= $(LIBFT_DIR)/$(LIBFT_LIB)
 LIBFT_GIT		= https://github.com/fsandel/libft
@@ -30,7 +30,9 @@ OBJ				= $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 OBJ_DIR			= obj
 OBJ_FILES		= $(SRC_FILES:.c=.o)
 
-HDR				= push_swap.h
+HDR				= $(addprefix $(HDR_DIR)/, $(HDR_FILES))
+HDR_DIR			= include
+HDR_FILES		= push_swap.h
 
 
 all:			obj_dir $(LIBFT) $(NAME)

@@ -6,11 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:22:37 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 11:25:14 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:32:23 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 static void	swap(int *stack, int size_stack)
 {

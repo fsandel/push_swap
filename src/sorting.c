@@ -6,11 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 17:06:30 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 11:25:32 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:32:16 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 static void sort_132(t_ps *ps)
 {

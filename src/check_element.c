@@ -6,11 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:36:13 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 11:25:20 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:31:34 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 void	check_duplicate(t_ps *ps)
 {

@@ -6,11 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:56:00 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 11:25:28 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/16 13:32:13 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../include/push_swap.h"
 
 int	get_maximum(int *stack, int stack_size)
 {
