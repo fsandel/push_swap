@@ -6,43 +6,11 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:16:41 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/12 17:34:09 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/13 15:02:23 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	count_char(char *str, char c)
-{
-	int	i;
-	int	counter;
-
-	if (ft_strlen(str) < 3)
-		error('s', NULL);
-	i = 0;
-	counter = 0;
-	while (str[i] && str[i + 1])
-	{
-		if (str[i] == c && str[i + 1] != c)
-			counter++;
-		i++;
-	}
-	if (counter < 1)
-		error('e', NULL);
-	return (counter);
-}
-
-void	print_stack(int *stack)
-{
-	int	i;
-
-	i = 0;
-	while (stack[i])
-	{
-		ft_putnbr_fd(stack[i++], 1);
-		ft_putchar_fd('\n', 1);
-	}
-}
 
 void	print_stacks(t_ps *ps)
 {
@@ -64,6 +32,40 @@ void	print_stacks(t_ps *ps)
 			ft_putchar_fd(' ', 1);
 		ft_putchar_fd('\n', 1);
 	}
+}
+
+int	ft_strlen_ignore(char *str)
+{
+	int	i;
+	char const skip[] = {9, 10, 11, 12, 13, 32, '0', 0};
+	int	len;
+
+	i = 0;
+	while (str[i] && ft_strchr(skip, str[i]))
+		i++;
+	len = i;
+	while (str[len] && ft_isdigit(str[len]))
+		len++;
+	return (len - i);
+}
+
+int	count_words(char const *s)
+{
+	int		i;
+	int			count;
+	char const	c = ' ';
+
+	count = 0;
+	i = 0;
+	while (s[i] == c)
+		i++;
+	while (s[i])
+	{
+		if (s[i] == c && s[i + 1] != c && s[i + 1] != '\0')
+			count++;
+		i++;
+	}
+	return (count + 1);
 }
 
 long	ps_atoi(const char *str)

@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:23:57 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/12 18:07:14 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/13 16:52:38 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct ps
 	int		min_a;
 	int		min_b;
 	int		operations;
+	int		parts;
 }			t_ps;
 
 //error.c
@@ -42,6 +43,11 @@ t_ps	*init_stacks(int argc, char *argv[]);
 void	create_stack(int argc, char *argv[], t_ps *ps);
 void	from_string(int argc, char *argv[], t_ps *ps);
 void	from_numbers(int argc, char *argv[], t_ps *ps);
+void	free_exit(char **array);
+int		ft_iswhitespace(char c);
+int		check_whitespace_digit(char *str);
+int		make_element(char **array, int i);
+void	set_maxima(t_ps *ps);
 
 //check_element.c
 int		check_element_char(char *str);
@@ -54,6 +60,9 @@ int		count_char(char *str, char c);
 void	print_stack(int *stack);
 long	ps_atoi(const char *str);
 void	print_stacks(t_ps *ps);
+int		count_words(char const *s);
+int		get_array_size(int argc, char *argv[]);
+int	ft_strlen_ignore(char *str);
 
 //sort_utils.c
 int		size(int *stack);
@@ -85,5 +94,7 @@ void	rrr(t_ps *ps);
 void	sort(t_ps *ps);
 void	sort_2(t_ps *ps);
 void	sort_3(t_ps *ps);
+void	algorithm(t_ps *ps);
+void	new_algorithm(t_ps *ps);
 
 #endif

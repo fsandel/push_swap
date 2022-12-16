@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:22:34 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/12 17:02:58 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/13 15:12:34 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ static void	rotate(int *stack, int stack_size)
 void	ra(t_ps *ps)
 {
 	rotate(ps->a, ps->size_a);
-	ft_putendl_fd("ra", 2);
+	ft_putendl_fd("ra", 1);
 	ps->operations++;
 }
 
 void	rb(t_ps *ps)
 {
 	rotate(ps->b, ps->size_b);
-	ft_putendl_fd("rb", 2);
+	ft_putendl_fd("rb", 1);
 	ps->operations++;
 }
 
@@ -47,6 +47,6 @@ void	rr(t_ps *ps)
 {
 	rotate(ps->a, ps->size_a);
 	rotate(ps->b, ps->size_b);
-	ft_putendl_fd("rr", 2);
+	ft_putendl_fd("rr", 1);
 	ps->operations++;
 }
