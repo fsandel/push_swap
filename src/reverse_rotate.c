@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:29:42 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 18:01:51 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/18 20:18:18 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,33 @@ void	reverse_rotate(int *stack, int stack_size)
 	stack[0] = temp;
 }
 
-void	rra(t_ps *ps)
+void	rra(t_ps *ps, int print)
 {
+	if (ps->size_a < 2)
+		return ;
 	reverse_rotate(ps->a, ps->size_a);
-	if (OUTPUT)
+	if (print)
 		ft_putendl_fd("rra", 1);
 	ps->operations++;
 }
 
-void	rrb(t_ps *ps)
+void	rrb(t_ps *ps, int print)
 {
+	if (ps->size_b < 2)
+		return ;
 	reverse_rotate(ps->b, ps->size_b);
-	if (OUTPUT)
+	if (print)
 		ft_putendl_fd("rrb", 1);
 	ps->operations++;
 }
 
-void	rrr(t_ps *ps)
+void	rrr(t_ps *ps, int print)
 {
+	if (ps->size_a < 2 && ps->size_b < 2)
+		return ;
 	reverse_rotate(ps->a, ps->size_a);
 	reverse_rotate(ps->b, ps->size_b);
-	if (OUTPUT)
+	if (print)
 		ft_putendl_fd("rrr", 1);
 	ps->operations++;
 }

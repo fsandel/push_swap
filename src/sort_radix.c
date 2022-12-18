@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   sort_radix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:45:40 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 20:31:13 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/18 20:24:44 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	radix(t_ps *ps)
+void	sort_radix(t_ps *ps, int size, int print)
 {
 	int	i;
 	int	j;
-	int	size;
 
-	size = ps->size_a;
 	j = 0;
 	while (!is_finished(ps))
 	{
@@ -26,13 +24,13 @@ void	radix(t_ps *ps)
 		while (i < size)
 		{
 			if (((ps->a[0]>>j)&1) == 0)
-				pb(ps);
+				pb(ps, print);
 			else
-				ra(ps);
+				ra(ps, print);
 			i++;
 		}
 		while (ps->size_b)
-			pa(ps);
+			pa(ps, print);
 		j++;
 	}
 }

@@ -3,91 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:56:00 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 14:32:32 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/18 20:27:16 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	update_extreme(t_ps *ps)
+int	is_finished(t_ps *ps)
 {
 	int	i;
 
-	i = 0;
+	if (ps->size_a < 2)
+		return (1);
+	i = 1;
 	while (i < ps->size_a)
 	{
-		if (ps->max_a < ps->a[i])
-			ps->max_a = ps->a[i];
-		if (ps->min_a > ps->a[i])
-			ps->min_a = ps->a[i];
-		i++;
-	}
-	i = 0;
-	while (i < ps->size_b)
-	{
-		if (ps->max_b < ps->b[i])
-			ps->max_b = ps->b[i];
-		if (ps->min_b > ps->b[i])
-			ps->min_b = ps->b[i];
-		i++;
-	}
-}
-
-int	get_maximum(int *stack, int stack_size)
-{
-	int	max;
-	int	i;
-
-	max = stack[0];
-	i = 0;
-	while (i < stack_size)
-	{
-		if (max < stack[i])
-			max = stack[i];
-		i++;
-	}
-	return (max);
-}
-
-int	get_minimum(int *stack, int stack_size)
-{
-	int	min;
-	int	i;
-
-	min = stack[0];
-	i = 0;
-	while (i < stack_size)
-	{
-		if (min > stack[i])
-			min = stack[i];
-		i++;
-	}
-	return (min);
-}
-
-int	is_sorted(int *stack, int stack_size)
-{
-	int	i;
-
-	if (stack_size < 2)
-		return (0);
-	i = 1;
-	while (i < stack_size)
-	{
-		if (stack[i - 1] > stack[i])
+		if (ps->a[i - 1] > ps->a[i])
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	is_finished(t_ps *ps)
+
+void	b_max_to_top(t_ps *ps, int print)
 {
-	if (is_sorted(ps->a, ps->size_a) && (ps->size_b == 0))
-		return (1);
-	else
-		return (0);
+	int	i;
+	int	direction;
+
+	i = 0;
+	while (ps->b[i] != ps->max_b)
+		i++;
+	while (ps->b[0] != ps->max_b)
+	{
+		if (i > ps->size_b / 2)
+			rrb(ps, print);
+		else
+			rb(ps, print);
+	}
+}
+
+void	a_min_to_top(t_ps *ps, int print)
+{
+	int	i;
+
+	i = 0;
+	while (ps->a[i] != ps->min_a)
+		i++;
+	while (ps->a[0] != ps->min_a)
+	{
+		if (i > ps->size_a / 2)
+			rra(ps, print);
+		else
+			ra(ps, print);
+	}
 }

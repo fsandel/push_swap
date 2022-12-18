@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:20:48 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 20:00:38 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/18 21:15:15 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	copy_stacks(t_ps *ps);
 
 int	count_smaller(int value, int *temp, int size)
 {
@@ -59,32 +61,16 @@ int	main(int argc, char *argv[])
 	check_duplicate(ps);
 	change_to_index(ps);
 	set_maxima(ps);
-	//sort(ps);
-	radix(ps);
-	//print_stacks(ps);
+	copy_stacks(ps);
+	sort(ps);
 	free_struct(ps);
 	return (0);
 }
 
-// int	main(int argc, char *argv[])
-// {
-// 	t_ps	*ps;
-// 	int	i;
-
-// 	i = 1;
-// 	while (i < 100)
-// 	{
-// 		input_check(argc, argv);
-// 		ps = init_stacks(argc, argv);
-// 		create_stack(argc, argv, ps);
-// 		check_duplicate(ps);
-// 		change_to_index(ps);
-// 		set_maxima(ps);
-// 		ps->parts = i;
-// 		sort(ps);
-// 		free_struct(ps);
-// 		ft_printf("max_parts: %d, \t operations: %d\n", i, ps->operations);
-// 		i++;
-// 	}
-// 	return (0);
-// }
+void	copy_stacks(t_ps *ps)
+{
+	ps->a_copy = ft_calloc(ps->size_a, sizeof(int));
+	ps->b_copy = ft_calloc(ps->size_a, sizeof(int));
+	ps->size = ps->size_a;
+	ft_memcpy(ps->a_copy, ps->a, ps->size_a);
+}

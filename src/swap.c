@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:22:37 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 18:02:47 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/18 20:21:53 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,33 @@ static void	swap(int *stack, int size_stack)
 	stack[1] = temp;
 }
 
-void	sa(t_ps *ps)
+void	sa(t_ps *ps, int print)
 {
+	if (ps->size_a < 2)
+		return ;
 	swap(ps->a, ps->size_a);
-	if (OUTPUT)
+	if (print)
 		ft_putendl_fd("sa", 1);
 	ps->operations++;
 }
 
-void	sb(t_ps *ps)
+void	sb(t_ps *ps, int print)
 {
+	if (ps->size_b < 2)
+		return ;
 	swap(ps->b, ps->size_b);
-	if (OUTPUT)
+	if (print)
 		ft_putendl_fd("sb", 1);
 	ps->operations++;
 }
 
-void	ss(t_ps *ps)
+void	ss(t_ps *ps, int print)
 {
+	if (ps->size_a < 2 && ps->size_b < 2)
+		return ;
 	swap(ps->a, ps->size_a);
 	swap(ps->b, ps->size_b);
-	if (OUTPUT)
+	if (print)
 		ft_putendl_fd("ss", 1);
 	ps->operations++;
 }

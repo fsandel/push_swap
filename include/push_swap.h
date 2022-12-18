@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:23:57 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 20:14:50 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/18 21:14:29 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct ps
 {
 	int		*a;
 	int		*b;
+	int		*a_copy;
+	int		*b_copy;
+	int		size;
 	int		size_a;
 	int		size_b;
 	int		max_a;
@@ -33,8 +36,32 @@ typedef struct ps
 	int		operations;
 	int		parts;
 }			t_ps;
-//radix.c
-void	radix(t_ps *ps);
+
+//sort_2.c
+void	sort_2(t_ps *ps, int print);
+
+//sort_3.c
+void	sort_3(t_ps *ps, int print);
+
+//sort_4.c
+void	sort_4(t_ps *ps, int print);
+
+//sort_5.c
+void	sort_5(t_ps *ps, int print);
+
+//sort_basic.c
+void	sort_basic(t_ps *ps, int print);
+
+//sort_chunk.c
+void	sort_chunk(t_ps *ps, int chunks, int size, int print);
+
+//sort_radix.c
+void	sort_radix(t_ps *ps, int size, int print);
+
+//extreme.c
+void	update_extreme(t_ps *ps);
+int		get_maximum(int *stack, int stack_size);
+int		get_minimum(int *stack, int stack_size);
 
 //error.c
 void	input_check(int argc, char *argv[]);
@@ -66,40 +93,36 @@ long	ps_atoi(const char *str);
 void	print_stacks(t_ps *ps);
 int		count_words(char const *s);
 int		get_array_size(int argc, char *argv[]);
-int	ft_strlen_ignore(char *str);
+int		ft_strlen_ignore(char *str);
 
 //sort_utils.c
-int		size(int *stack);
-int		get_maximum(int *stack, int stack_size);
-int		get_minimum(int *stack, int stack_size);
-int		is_sorted(int *stack, int stack_size);
 int		is_finished(t_ps *ps);
-void	update_extreme(t_ps *ps);
+void	b_max_to_top(t_ps *ps, int print);
+void	a_min_to_top(t_ps *ps, int print);
 
 //swap.c
-void	sa(t_ps *ps);
-void	sb(t_ps *ps);
-void	ss(t_ps *ps);
+void	sa(t_ps *ps, int print);
+void	sb(t_ps *ps, int print);
+void	ss(t_ps *ps, int print);
 
 //push.c
-void	pa(t_ps *ps);
-void	pb(t_ps *ps);
+void	pa(t_ps *ps, int print);
+void	pb(t_ps *ps, int print);
 
 //rotate.c
-void	ra(t_ps *ps);
-void	rb(t_ps *ps);
-void	rr(t_ps *ps);
+void	ra(t_ps *ps, int print);
+void	rb(t_ps *ps, int print);
+void	rr(t_ps *ps, int print);
 
 //reverse_rotate.c
-void	rra(t_ps *ps);
-void	rrb(t_ps *ps);
-void	rrr(t_ps *ps);
+void	rra(t_ps *ps, int print);
+void	rrb(t_ps *ps, int print);
+void	rrr(t_ps *ps, int print);
 
 //sorting.c
 void	sort(t_ps *ps);
-void	sort_2(t_ps *ps);
-void	sort_3(t_ps *ps);
-void	algorithm(t_ps *ps);
-void	new_algorithm(t_ps *ps);
+void	sort_small(t_ps *ps);
+void	reset_stacks(t_ps *ps);
+
 
 #endif

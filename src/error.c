@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:31:13 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 13:31:45 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/18 21:02:16 by florian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	free_struct(void *ptr)
 	ps = (t_ps *)ptr;
 	free(ps->a);
 	free(ps->b);
+	free(ps->a_copy);
+	free(ps->b_copy);
 	free(ps);
 	return ;
 }

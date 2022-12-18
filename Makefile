@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
+#    By: florian <florian@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 09:53:10 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/16 19:46:16 by fsandel          ###   ########.fr        #
+#    Updated: 2022/12/18 19:41:47 by florian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ SRC				= $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 SRC_DIR			= src
 SRC_FILES		= main.c error.c stacks.c utils.c check_element.c \
 					sort_utils.c sorting.c \
-					push.c reverse_rotate.c rotate.c swap.c radix.c
+					push.c reverse_rotate.c rotate.c swap.c sort_radix.c \
+					sort_2.c sort_3.c sort_4.c sort_5.c \
+					sort_basic.c extreme.c
 
 OBJ				= $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 OBJ_DIR			= obj
