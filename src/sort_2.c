@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 19:12:44 by florian           #+#    #+#             */
-/*   Updated: 2022/12/18 20:28:17 by florian          ###   ########.fr       */
+/*   Updated: 2022/12/19 11:00:50 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sort_2(t_ps *ps, int print)
 {
-	if (is_finished)
+	if (is_finished(ps))
 		return ;
 	else
 		return (ra(ps, print));

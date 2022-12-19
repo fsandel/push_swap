@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_radix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 19:45:40 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/18 20:24:44 by florian          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:24:44 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	sort_radix(t_ps *ps, int size, int print)
 		i = 0;
 		while (i < size)
 		{
-			if (((ps->a[0]>>j)&1) == 0)
+			if (((ps->a[0] >> j) & 1) == 0)
 				pb(ps, print);
 			else
 				ra(ps, print);

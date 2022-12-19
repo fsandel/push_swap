@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:31:13 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/18 21:02:16 by florian          ###   ########.fr       */
+/*   Updated: 2022/12/19 18:55:44 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,12 @@ void	free_array(char **array)
 	while (array[j])
 		free(array[j++]);
 	free(array);
+}
+
+void	free_exit(char **array)
+{
+	if (array)
+		free_array(array);
+	ft_putendl_fd("Error", 2);
+	exit(1);
 }

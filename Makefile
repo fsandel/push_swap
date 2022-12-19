@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: florian <florian@student.42.fr>            +#+  +:+       +#+         #
+#    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 09:53:10 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/18 19:41:47 by florian          ###   ########.fr        #
+#    Updated: 2022/12/19 19:00:16 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,11 @@ LIBFT_GIT		= https://github.com/fsandel/libft
 
 SRC				= $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 SRC_DIR			= src
-SRC_FILES		= main.c error.c stacks.c utils.c check_element.c \
-					sort_utils.c sorting.c \
-					push.c reverse_rotate.c rotate.c swap.c sort_radix.c \
-					sort_2.c sort_3.c sort_4.c sort_5.c \
-					sort_basic.c extreme.c
+SRC_FILES		= check_element.c error.c extreme.c main.c push.c \
+					reverse_rotate.c rotate.c sort_2.c sort_3.c sort_4.c \
+					sort_5.c sort_chunk.c sort_radix.c sort_utils.c sorting.c \
+					stacks.c swap.c utils.c index.c reset.c
+
 
 OBJ				= $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 OBJ_DIR			= obj

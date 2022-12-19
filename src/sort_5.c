@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 18:40:29 by florian           #+#    #+#             */
-/*   Updated: 2022/12/18 20:33:07 by florian          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:22:07 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ void	min_to_other_side(t_ps *ps, int print)
 	pb(ps, print);
 	return ;
 }
-

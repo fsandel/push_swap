@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:23:57 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/18 21:14:29 by florian          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:11:42 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,77 +37,52 @@ typedef struct ps
 	int		parts;
 }			t_ps;
 
-//sort_2.c
-void	sort_2(t_ps *ps, int print);
-
-//sort_3.c
-void	sort_3(t_ps *ps, int print);
-
-//sort_4.c
-void	sort_4(t_ps *ps, int print);
-
-//sort_5.c
-void	sort_5(t_ps *ps, int print);
-
-//sort_basic.c
-void	sort_basic(t_ps *ps, int print);
-
-//sort_chunk.c
-void	sort_chunk(t_ps *ps, int chunks, int size, int print);
-
-//sort_radix.c
-void	sort_radix(t_ps *ps, int size, int print);
-
-//extreme.c
-void	update_extreme(t_ps *ps);
-int		get_maximum(int *stack, int stack_size);
-int		get_minimum(int *stack, int stack_size);
-
-//error.c
-void	input_check(int argc, char *argv[]);
-void	error(char c, void *ptr);
-void	free_struct(void *ptr);
-void	free_array(char **array);
-
-//stacks.c
-t_ps	*init_stacks(int argc, char *argv[]);
-void	create_stack(int argc, char *argv[], t_ps *ps);
-void	from_string(int argc, char *argv[], t_ps *ps);
-void	from_numbers(int argc, char *argv[], t_ps *ps);
-void	free_exit(char **array);
-int		ft_iswhitespace(char c);
-int		check_whitespace_digit(char *str);
-int		make_element(char **array, int i);
-void	set_maxima(t_ps *ps);
-
-//check_element.c
-int		check_element_char(char *str);
-int		check_element_length(char *str);
-void	check_duplicate(t_ps *ps);
-int		check_element(char *str, t_ps *ps);
-
 //utils.c
-int		count_char(char *str, char c);
-void	print_stack(int *stack);
-long	ps_atoi(const char *str);
 void	print_stacks(t_ps *ps);
-int		count_words(char const *s);
-int		get_array_size(int argc, char *argv[]);
 int		ft_strlen_ignore(char *str);
-
-//sort_utils.c
-int		is_finished(t_ps *ps);
-void	b_max_to_top(t_ps *ps, int print);
-void	a_min_to_top(t_ps *ps, int print);
+int		count_words(char const *s);
+long	ps_atoi(const char *str);
+int		ft_iswhitespace(char c);
 
 //swap.c
 void	sa(t_ps *ps, int print);
 void	sb(t_ps *ps, int print);
 void	ss(t_ps *ps, int print);
 
-//push.c
-void	pa(t_ps *ps, int print);
-void	pb(t_ps *ps, int print);
+//stacks.c
+t_ps	*init_stacks(int argc, char *argv[]);
+int		get_array_size(int argc, char *argv[]);
+void	create_stack(int argc, char *argv[], t_ps *ps);
+int		check_whitespace_digit(char *str);
+
+//sorting.c
+void	choose_sort(t_ps *ps);
+void	sort(t_ps *ps);
+void	sort_small(t_ps *ps, int print);
+
+//sort_chunk.c
+void	sort_chunk(t_ps *ps, int chunks, int size, int print);
+void	get_chunks(t_ps *ps, int max_chunks);
+
+//sort_radix.c
+void	sort_radix(t_ps *ps, int size, int print);
+
+//sort_utils.c
+int		is_finished(t_ps *ps);
+void	b_max_to_top(t_ps *ps, int print);
+void	a_min_to_top(t_ps *ps, int print);
+
+//sort_5.c
+void	sort_5(t_ps *ps, int print);
+
+//sort_4.c
+void	sort_4(t_ps *ps, int print);
+
+//sort_3.c
+void	sort_3(t_ps *ps, int print);
+
+//sort_2.c
+void	sort_2(t_ps *ps, int print);
 
 //rotate.c
 void	ra(t_ps *ps, int print);
@@ -119,10 +94,37 @@ void	rra(t_ps *ps, int print);
 void	rrb(t_ps *ps, int print);
 void	rrr(t_ps *ps, int print);
 
-//sorting.c
-void	sort(t_ps *ps);
-void	sort_small(t_ps *ps);
+//reset.c
+void	copy_stacks(t_ps *ps);
 void	reset_stacks(t_ps *ps);
+
+//push.c
+void	pa(t_ps *ps, int print);
+void	pb(t_ps *ps, int print);
+
+//index.c
+int		count_smaller(int value, int *temp, int size);
+void	change_to_index(t_ps *ps);
+
+//extreme.c
+void	update_extreme(t_ps *ps);
+int		get_maximum(int *stack, int stack_size);
+int		get_minimum(int *stack, int stack_size);
+void	set_maxima(t_ps *ps);
+
+//error.c
+void	input_check(int argc, char *argv[]);
+void	error(char c, void *ptr);
+void	free_struct(void *ptr);
+void	free_array(char **array);
+void	free_exit(char **array);
+
+//check_element.c
+void	check_duplicate(t_ps *ps);
+int		make_element(char **array, int i);
+
+
+
 
 
 #endif

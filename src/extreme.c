@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   extreme.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 19:34:25 by florian           #+#    #+#             */
-/*   Updated: 2022/12/18 19:35:01 by florian          ###   ########.fr       */
+/*   Updated: 2022/12/19 18:57:48 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,12 @@ int	get_minimum(int *stack, int stack_size)
 		i++;
 	}
 	return (min);
+}
+
+void	set_maxima(t_ps *ps)
+{
+	ps->max_a = get_maximum(ps->a, ps->size_a);
+	ps->min_a = get_minimum(ps->a, ps->size_a);
+	ps->max_b = INT_MIN;
+	ps->min_b = INT_MAX;
 }

@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 15:29:42 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/18 20:18:18 by florian          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:23:14 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-
-void	reverse_rotate(int *stack, int stack_size)
+static void	reverse_rotate(int *stack, int stack_size)
 {
 	int	temp;
 	int	i;

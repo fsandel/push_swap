@@ -1,46 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_element.c                                    :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/12 12:36:13 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/19 18:56:11 by fsandel          ###   ########.fr       */
+/*   Created: 2022/12/19 18:59:50 by fsandel           #+#    #+#             */
+/*   Updated: 2022/12/19 19:23:44 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	check_duplicate(t_ps *ps)
+int	count_smaller(int value, int *temp, int size)
 {
-	int	j;
 	int	i;
-	int	temp;
+	int	amount;
 
-	j = 0;
-	while (j < ps->size_a)
+	amount = 0;
+	i = 0;
+	while (i < size)
 	{
-		temp = ps->a[j];
-		i = 0;
-		while (i < ps->size_a)
-		{
-			if (temp == ps->a[i] && i != j)
-				error('2', ps);
-			i++;
-		}
-		j++;
+		if (value > temp[i])
+			amount++;
+		i++;
 	}
+	return (amount);
 }
 
-int	make_element(char **array, int i)
+void	change_to_index(t_ps *ps)
 {
-	long	temp;
+	int		*temp;
+	int		i;
 
-	if ((array[i][0] == 0) || (ft_strlen_ignore(array[i]) > 10))
-		free_exit(array);
-	temp = ps_atoi(array[i]);
-	if (temp > INT_MAX || temp < INT_MIN)
-		free_exit(array);
-	return ((int)temp);
+	temp = ft_calloc(ps->size_a, sizeof(int));
+	i = 0;
+	while (i < ps->size_a)
+	{
+		temp[i] = ps->a[i];
+		i++;
+	}
+	i = 0;
+	while (i < ps->size_a)
+	{
+		ps->a[i] = count_smaller(ps->a[i], temp, ps->size_a);
+		i++;
+	}
+	free(temp);
 }

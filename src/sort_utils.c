@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:56:00 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/18 20:27:16 by florian          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:15:53 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	is_finished(t_ps *ps)
 	}
 	return (1);
 }
-
 
 void	b_max_to_top(t_ps *ps, int print)
 {

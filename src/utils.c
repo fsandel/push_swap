@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:16:41 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 13:32:29 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:24:16 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	print_stacks(t_ps *ps)
 
 int	ft_strlen_ignore(char *str)
 {
-	int	i;
-	char const skip[] = {9, 10, 11, 12, 13, 32, '0', 0};
-	int	len;
+	int			i;
+	char const	skip[] = {9, 10, 11, 12, 13, 32, '+', '-', '0', 0};
+	int			len;
 
 	i = 0;
 	while (str[i] && ft_strchr(skip, str[i]))
@@ -51,7 +51,7 @@ int	ft_strlen_ignore(char *str)
 
 int	count_words(char const *s)
 {
-	int		i;
+	int			i;
 	int			count;
 	char const	c = ' ';
 
@@ -93,4 +93,12 @@ long	ps_atoi(const char *str)
 		i++;
 	}
 	return (out * vz);
+}
+
+int	ft_iswhitespace(char c)
+{
+	if ((c > 8 && c < 14) || (c == 32))
+		return (1);
+	else
+		return (0);
 }

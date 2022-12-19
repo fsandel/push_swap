@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:48:38 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/16 19:38:32 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:24:33 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,11 @@ t_ps	*init_stacks(int argc, char *argv[])
 	ps->size_b = 0;
 	ps->a = (int *)ft_calloc(ps->size_a, sizeof(int));
 	ps->b = (int *)ft_calloc(ps->size_a, sizeof(int));
+	ps->a_copy = (int *)ft_calloc(ps->size_a, sizeof(int));
+	ps->b_copy = (int *)ft_calloc(ps->size_a, sizeof(int));
 	ps->operations = 0;
 	ps->parts = 1;
-	
 	return (ps);
-}
-
-void	set_maxima(t_ps *ps)
-{
-	ps->max_a = get_maximum(ps->a, ps->size_a);
-	ps->min_a = get_minimum(ps->a, ps->size_a);
-	ps->max_b = INT_MIN;
-	ps->min_b = INT_MAX;
 }
 
 int	get_array_size(int argc, char *argv[])
@@ -70,18 +63,6 @@ void	create_stack(int argc, char *argv[], t_ps *ps)
 	}
 }
 
-int	make_element(char **array, int i)
-{
-	long	temp;
-
-	if ((array[i][0] == 0) || (ft_strlen_ignore(array[i]) > 10))
-		free_exit(array);
-	temp = ps_atoi(array[i]);
-	if (temp > INT_MAX || temp < INT_MIN)
-		free_exit(array);
-	return ((int)temp);
-}
-
 int	check_whitespace_digit(char *str)
 {
 	int	i;
@@ -91,26 +72,11 @@ int	check_whitespace_digit(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (ft_isdigit(str[i]) || ft_iswhitespace(str[i]))
+		if (ft_isdigit(str[i]) || ft_iswhitespace(str[i])
+			|| ft_strchr("+-", str[i]))
 			i++;
 		else
 			return (0);
 	}
 	return (1);
-}
-
-void	free_exit(char **array)
-{
-	if (array)
-		free_array(array);
-	ft_putendl_fd("Error", 2);
-	exit(1);
-}
-
-int	ft_iswhitespace(char c)
-{
-	if ((c > 8 && c < 14) || (c == 32))
-		return (1);
-	else
-		return (0);
 }
