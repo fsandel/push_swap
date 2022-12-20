@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:48:38 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/19 19:24:33 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:56:58 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	create_stack(int argc, char *argv[], t_ps *ps)
 			free_exit(NULL);
 		array = ft_split(argv[j], ' ');
 		while (array[i])
-			ps->a[index++] = make_element(array, i++);
+			ps->a[index++] = make_element(array, i++, ps);
 		free_array(array);
 		j++;
 	}

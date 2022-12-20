@@ -6,7 +6,7 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 09:53:10 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/19 19:00:16 by fsandel          ###   ########.fr        #
+#    Updated: 2022/12/20 10:48:53 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME			= push_swap
 CC				= cc
 RM				= rm -f
 CFLAGS			= #-Wall -Wextra -Werror
+
 
 LIB_DIR			= lib
 LIBFT_DIR		= $(LIB_DIR)/libft

@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:36:13 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/19 18:56:11 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/19 19:58:36 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,20 @@ void	check_duplicate(t_ps *ps)
 	}
 }
 
-int	make_element(char **array, int i)
+int	make_element(char **array, int i, t_ps *ps)
 {
 	long	temp;
 
 	if ((array[i][0] == 0) || (ft_strlen_ignore(array[i]) > 10))
+	{
+		free_struct(ps);
 		free_exit(array);
-	temp = ps_atoi(array[i]);
+	}
+	temp = ps_atoi(array[i], ps);
 	if (temp > INT_MAX || temp < INT_MIN)
+	{
+		free_struct(ps);
 		free_exit(array);
+	}
 	return ((int)temp);
 }

@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:23:57 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/19 19:11:42 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/20 11:03:48 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 
-# define OUTPUT	1
+# define LEAK 0
 
 typedef struct ps
 {
@@ -41,7 +41,7 @@ typedef struct ps
 void	print_stacks(t_ps *ps);
 int		ft_strlen_ignore(char *str);
 int		count_words(char const *s);
-long	ps_atoi(const char *str);
+long	ps_atoi(const char *str, t_ps *ps);
 int		ft_iswhitespace(char c);
 
 //swap.c
@@ -121,10 +121,6 @@ void	free_exit(char **array);
 
 //check_element.c
 void	check_duplicate(t_ps *ps);
-int		make_element(char **array, int i);
-
-
-
-
+int		make_element(char **array, int i, t_ps *ps);
 
 #endif
