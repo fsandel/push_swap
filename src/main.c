@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:20:48 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/20 10:50:35 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/20 15:48:12 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 		return (0);
-	input_check(argc, argv);
 	ps = init_stacks(argc, argv);
 	create_stack(argc, argv, ps);
 	check_duplicate(ps);

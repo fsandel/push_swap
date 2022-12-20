@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:48:38 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/19 19:56:58 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/20 15:49:24 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	create_stack(int argc, char *argv[], t_ps *ps)
 	char	**array;
 	int		i;
 	int		index;
-	long	temp;
 
 	index = 0;
 	j = 1;

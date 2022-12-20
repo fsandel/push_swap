@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:56:00 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/19 19:15:53 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/20 15:49:13 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	is_finished(t_ps *ps)
 void	b_max_to_top(t_ps *ps, int print)
 {
 	int	i;
-	int	direction;
 
 	i = 0;
 	while (ps->b[i] != ps->max_b)

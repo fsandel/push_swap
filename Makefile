@@ -6,14 +6,14 @@
 #    By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 09:53:10 by fsandel           #+#    #+#              #
-#    Updated: 2022/12/20 10:48:53 by fsandel          ###   ########.fr        #
+#    Updated: 2022/12/20 15:59:56 by fsandel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= push_swap
 CC				= cc
 RM				= rm -f
-CFLAGS			= #-Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror
 
 
 LIB_DIR			= lib

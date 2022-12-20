@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: florian <florian@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:22:37 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/18 20:21:53 by florian          ###   ########.fr       */
+/*   Updated: 2022/12/20 15:49:37 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static void	swap(int *stack, int size_stack)
 {
 	int	temp;
-	int	top;
 
 	if (size_stack < 2)
 		return ;

@@ -6,19 +6,13 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:31:13 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/20 10:51:21 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/20 15:48:07 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	input_check(int argc, char *argv[])
-{
-	if (argc < 2)
-		error('a', NULL);
-}
-
-void	error(char c, void *ptr)
+void	error(void *ptr)
 {
 	free_struct(ptr);
 	ft_putendl_fd("Error", 2);

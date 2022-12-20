@@ -6,7 +6,7 @@
 /*   By: fsandel <fsandel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:16:41 by fsandel           #+#    #+#             */
-/*   Updated: 2022/12/20 11:04:11 by fsandel          ###   ########.fr       */
+/*   Updated: 2022/12/20 15:57:19 by fsandel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	count_words(char const *s)
 	return (count + 1);
 }
 
-long	ps_atoi(const char *str, t_ps *ps)
+long	ps_atoi(const char *str, t_ps *ps, char **array)
 {
 	int		i;
 	long	out;
@@ -83,7 +83,7 @@ long	ps_atoi(const char *str, t_ps *ps)
 		if (str[i++] == '-')
 			vz = -1;
 	if (!ft_isdigit(str[i]))
-		error('c', ps);
+		return (free_array(array), error(ps), 0);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		out += str[i] - '0';
@@ -93,7 +93,7 @@ long	ps_atoi(const char *str, t_ps *ps)
 	}
 	while (str[i])
 		if (!ft_iswhitespace(str[i++]))
-			error('c', ps);
+			return (free_array(array), error(ps), 0);
 	return (out * vz);
 }
 
